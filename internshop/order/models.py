@@ -16,13 +16,13 @@ class OrderItem(models.Model):
     product =  models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     price = models.IntegerField()
-    created_at = models.DateTimeField(auto_now_add = True)
-    updated_at = models.DateTimeField(auto_now_add = True)
+    created_at = models.DateTimeField(auto_now = True)
+    updated_at = models.DateTimeField()
     
 
 class Order(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     order_items = models.ManyToManyField(OrderItem)
-    created_at = models.DateTimeField(auto_now_add = True)
-    updated_at = models.DateTimeField(auto_now_add = True)
+    created_at = models.DateTimeField(auto_now = True)
+    updated_at = models.DateTimeField()
     
