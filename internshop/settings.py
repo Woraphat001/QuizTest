@@ -32,7 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'internshop.product',   # This line for install product app
+    'internshop.product', 
+    'internshop.order',  # This line for install product app
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
 
 MIDDLEWARE = [
@@ -81,9 +83,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'internshop',
         'PROT': 5432,
-        'HOST': 'db',
+        'HOST': 'localhost',
         'USER': 'postgres',
-        'PASSWORD': 'postgres'
+        'PASSWORD': '12345678'
     }
 }
 
