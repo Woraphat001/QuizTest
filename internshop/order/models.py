@@ -12,17 +12,17 @@ from internshop.product.models import Product
 #>>> user.save()
 
 class OrderItem(models.Model):
-    id = models.IntegerField(primary_key=True)
+    
     product =  models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     price = models.IntegerField()
-    created_at = models.DateTimeField()
-    updated_at = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now = True)
+    updated_at = models.DateTimeField(auto_now = True)
     
 
 class Order(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     order_items = models.ManyToManyField(OrderItem)
-    created_at = models.DateTimeField()
-    updated_at = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now = True)
+    updated_at = models.DateTimeField(auto_now = True)
     
